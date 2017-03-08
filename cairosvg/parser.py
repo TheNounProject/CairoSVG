@@ -23,7 +23,7 @@ SVG Parser.
 
 import gzip
 import re
-from urllib.parse import urlunparse
+from urlparse import urlunparse
 
 import lxml.etree as ElementTree
 
