@@ -1,3 +1,5 @@
+# coding: utf8
+
 # This file is part of CairoSVG
 # Copyright © 2010-2016 Kozea
 #

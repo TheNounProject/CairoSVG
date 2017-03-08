@@ -1,3 +1,5 @@
+# coding: utf8
+
 #!/usr/bin/env python
 #
 # This file is part of CairoSVG
