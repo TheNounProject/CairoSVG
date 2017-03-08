@@ -184,7 +184,7 @@ class Node(dict):
     def __init__(self, node, url_fetcher, parent=None, parent_children=False,
                  url=None):
         """Create the Node from ElementTree ``node``, with ``parent`` Node."""
-        super().__init__()
+        super(Node, self).__init__()
         self.children = ()
 
         self.root = False
@@ -341,7 +341,7 @@ class Tree(Node):
                 new_tree.tag = cached_tree.tag
                 new_tree.root = True
                 return new_tree
-        return super().__new__(cls)
+        return Node.__new__(cls)
 
     def __init__(self, **kwargs):
         """Create the Tree from SVG ``text``."""
@@ -398,7 +398,7 @@ class Tree(Node):
             if self.xml_tree is None:
                 raise TypeError(
                     'No tag with id="{}" found.'.format(element_id))
-        super().__init__(
+        super(Tree, self).__init__(
             self.xml_tree, self.url_fetcher, parent, parent_children, self.url)
         self.root = True
         if tree_cache is not None and self.url:
