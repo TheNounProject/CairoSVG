@@ -85,7 +85,7 @@ def main():
         'parent_width': options.width, 'parent_height': options.height,
         'dpi': options.dpi, 'scale': options.scale, 'unsafe': options.unsafe}
     kwargs['write_to'] = (
-        sys.stdout.buffer if options.output == '-' else options.output)
+        sys.stdout if options.output == '-' else options.output)
     if options.input == '-':
         kwargs['file_obj'] = sys.stdin.buffer
     else:
