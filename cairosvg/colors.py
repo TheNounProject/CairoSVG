@@ -244,14 +244,14 @@ def color(string, opacity=1):
     match = HEX_RRGGBB.search(string)
     if match:
         plain_color = tuple(
-            int(value, 16) / 255 for value in (
+            int(value, 16) / 255.0 for value in (
                 string[1:3], string[3:5], string[5:7]))
         return plain_color + (opacity,)
 
     match = HEX_RGB.search(string)
     if match:
         plain_color = tuple(
-            int(value, 16) / 15 for value in (
+            int(value, 16) / 15.0 for value in (
                 string[1], string[2], string[3]))
         return plain_color + (opacity,)
 
