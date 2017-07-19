@@ -463,7 +463,7 @@ class PNGSurface(Surface):
         """Read the PNG surface content."""
         if self.output is not None:
             self.cairo.write_to_png(self.output)
-        return super().finish()
+        return super(PNGSurface, self).finish()
 
 
 class SVGSurface(Surface):
